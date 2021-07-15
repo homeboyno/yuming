@@ -1,6 +1,7 @@
 <?php
 namespace common\models;
 
+use Yii;
 use common\models\Share;
 use yii\db\ActiveRecord;
 use yii\web\IdentityInterface;
