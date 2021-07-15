@@ -1,0 +1,50 @@
+$brand-blue-50: rgb(25, 9, 199);
+$brand-blue-100: rgba(8, 0, 88, 0.8);
+$brand-blue-150: rgba(8, 0, 88, 0.6);
+$brand-blue-200: rgba(8, 0, 88, 0.4);
+$brand-blue-250: rgba(8, 0, 88, 0.2);
+$brand-blue-300: rgba(8, 0, 88, 0.1);
+$brand-blue: $brand-blue-50 !default;
+
+$brown-50: rgb(183, 163, 137);
+$brown-100: rgba(183, 163, 137, 0.8);
+$brown-150: rgba(183, 163, 137, 0.6);
+$brown-200: rgba(183, 163, 137, 0.4);
+$brown-250: rgba(183, 163, 137, 0.2);
+$brown-300: rgba(183, 163, 137, 0.1);
+$brown: $brown-50 !default;
+
+$blue-50: rgb(14, 104, 172);
+$blue-100: rgba(14, 104, 172, 0.8);
+$blue-150: rgba(14, 104, 172, 0.6);
+$blue-200: rgba(14, 104, 172, 0.4);
+$blue-250: rgba(14, 104, 172, 0.2);
+$blue-300: rgba(14, 104, 172, 0.1);
+$blue: $blue-50 !default;
+
+$gray-50: rgb(180, 181, 181);
+$gray-100: rgba(180, 181, 181, 0.8);
+$gray-150: rgba(180, 181, 181, 0.6);
+$gray-200: rgba(180, 181, 181, 0.4);
+$gray-250: rgba(180, 181, 181, 0.2);
+$gray-300: rgba(180, 181, 181, 0.1);
+$gray: $gray-50 !default;
+
+// Bootstrap brand color customization
+$white-color: #FFFFFF !default;
+$white-transparent: rgba($white-color, .8); 
+
+$gray-color:  #999999 !default;
+
+$brand-primary: $brand-blue !default;
+// $brand-success: $green !default;
+// $brand-danger: $red !default;
+// $brand-warning: $orange !default;
+// $brand-info: $cyan !default;
+// $brand-rose: $pink !default;
+
+// font-family
+$font-family: "方正兰亭黑", "Microsoft YaHei", "微软雅黑", "STXihei", "华文细黑", serif;
+
+$sidebar-bg-color: #080047;
+$sidebar-bg-active-color: #424673;

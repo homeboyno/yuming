@@ -1,0 +1,65 @@
+@media (max-width: 768px) {
+    .banner {
+        background-image: url('../images/ushinef-pattern-2.jpg');
+    }
+    .navbar.navbar-transparent {
+        background-color: transparent;
+    }
+    .navbar .popover-content {
+        padding: 0;
+        margin-right: 180px;
+    }
+    .footer .social-buttons li {
+        margin: 0 1em;
+    }
+    #portrait {
+        margin-right: 20px;
+    }
+}
+
+@media (max-width: 414px) {
+    .banner {
+        height: 180px;
+        padding-top: 40px;
+        .border {
+            width: 250px;
+            border: 0;
+        }
+        h1 {
+            font-size: 24px;
+        }
+    }
+}
+
+@media (min-width: 414px) and (max-width: 768px) {
+    .banner {
+        height: 200px;
+        padding: 40px 0;
+        .border { width: 350px; }
+        h1 { font-size: 36px; }
+    }
+}
+
+@media (min-width: 768px) {
+    .banner {
+        height: 250px;
+        padding: 70px 0;
+        h1 {
+            font-size: 50px;
+        }
+        .border {
+            width: 450px;
+        }
+    }
+}
+
+.no-borderradius {
+    .banner .Logo {
+        padding: 6px 0 0 10px;
+        background: none;
+    }
+}
+
+@media (max-width: 768px) {
+
+}

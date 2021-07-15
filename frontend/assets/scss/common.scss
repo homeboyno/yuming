@@ -1,0 +1,195 @@
+@import "_gradients.scss";
+@import '_variables.scss';
+
+@import "_global.scss";
+
+#portrait-template, #portrait-items {
+    display: none;
+}
+#portrait {
+    float: right;
+    margin-top: 5px;
+    .material-icons {
+        font-size: 24px;
+    }
+}
+#main{
+    width: 100%;
+    height: 100%;
+}
+.navbar .popover-content {
+    padding: 0;
+    margin-left: 35px;
+    .dropdown-menu {
+        margin-top: 0;
+    }
+}
+.language {
+    cursor: auto;
+    color: #CCC;
+    &:hover {
+        color: #CCC;
+    }
+    &.enable {
+        color: $brand-primary;
+        cursor: pointer;
+    }
+}
+
+.banner {
+    width: 100%;
+    height: 300px;
+    background-image: url('../images/ushinef-pattern-2_复制.svg');
+    background-size: cover;
+    padding: 85px 0;
+    text-align: center;
+    h1 {
+        color: white;
+        font-size: 60px;
+        font-weight: 600;
+        margin: 15px 0;
+    }
+    p {
+        color: white;
+    }
+    .border {
+        width: 500px;
+        display: inline-block;
+        border-top: 1px solid white;
+        border-bottom: 1px solid white;
+    }
+}
+
+footer {
+    border-top: 1px solid #CCC;
+}
+
+iframe.edite {
+    width: 100%;
+    overflow: hidden;
+    border: 0;
+    &::-webkit-scrollbar { 
+        display: none; 
+    }
+}
+
+@mixin sidebar-active() {
+    background: $sidebar-bg-active-color;
+    box-shadow: inset 0px 0px 2px $sidebar-bg-active-color;
+}
+.sidebar {
+    background-color: $sidebar-bg-color;
+    border-radius: 4px;
+    margin-top: 100px;
+    position: relative;
+    width: 150px;
+    z-index: 1000;
+    text-align: left;
+    box-shadow: 0 6px 10px 0 rgba(255, 255, 255, 0.14), 0 1px 18px 0 rgba(255, 255, 255, 0.12), 0 3px 5px -1px rgba(255, 255, 255, 0.2);
+    padding-bottom: 4px;
+    .title {
+        font-family: $font-family;
+        font-size: 1.1em;
+        color: white;
+        margin: 0;
+        line-height: 2.8em;
+        padding-left: 1em;
+    }
+    .items {
+        .categray {
+            p {
+                margin: 0;
+                cursor: pointer;
+                font-weight: 900!important;
+                line-height: 2.5em;
+                color: white;
+                &:hover {
+                    @include sidebar-active();                    
+                }
+            }
+            .categray-wrapper {
+                display: none;
+                .item {
+                    
+                }
+            }
+            &.active {
+                p {
+                    @include sidebar-active();                    
+                }
+            }
+            &.open {
+                .categray-wrapper {
+                    display: block;
+                }
+            }
+        }
+        .item {
+            line-height: 2.5em;
+            padding-left: 1em;
+            transition: all 0.2s linear;
+            cursor: pointer;
+            &.active, &:hover {
+                @include sidebar-active();                
+            }
+            a {
+                color: white;
+            }
+        }
+    }
+}
+
+.edite-list {
+    .card .card-image {
+        max-height: 220px;
+    }
+    .card-description {
+        max-height: 5em;
+        overflow: hidden;
+    }
+}
+
+.edite-detail {
+    .title {
+        border-bottom: 1px solid #ddd;
+        padding: 0.67em 0;
+    }
+    .time {
+        width: 100%;
+        padding-bottom: 0;
+        text-align: right;
+    }
+}
+
+#ContractModal {
+    p:not(.first-line) {
+        text-indent: 2em;
+    }
+    .modal-footer a.btn {
+        margin: 0;
+    }
+    .modal-footer {
+        padding: 20px;
+    }
+}
+
+.btn.btn-primary, .btn.btn-primary:hover, .btn.btn-primary:focus, .btn.btn-primary:active, .btn.btn-primary.active, .btn.btn-primary:active:focus, .btn.btn-primary:active:hover, .btn.btn-primary.active:focus, .btn.btn-primary.active:hover, .open > .btn.btn-primary.dropdown-toggle, .open > .btn.btn-primary.dropdown-toggle:focus, .open > .btn.btn-primary.dropdown-toggle:hover, .navbar .navbar-nav > li > a.btn.btn-primary, .navbar .navbar-nav > li > a.btn.btn-primary:hover, .navbar .navbar-nav > li > a.btn.btn-primary:focus, .navbar .navbar-nav > li > a.btn.btn-primary:active, .navbar .navbar-nav > li > a.btn.btn-primary.active, .navbar .navbar-nav > li > a.btn.btn-primary:active:focus, .navbar .navbar-nav > li > a.btn.btn-primary:active:hover, .navbar .navbar-nav > li > a.btn.btn-primary.active:focus, .navbar .navbar-nav > li > a.btn.btn-primary.active:hover, .open > .navbar .navbar-nav > li > a.btn.btn-primary.dropdown-toggle, .open > .navbar .navbar-nav > li > a.btn.btn-primary.dropdown-toggle:focus, .open > .navbar .navbar-nav > li > a.btn.btn-primary.dropdown-toggle:hover {
+    background-color: #050555!important;
+    color: #FFFFFF!important;
+}
+.btn.btn-primary, .navbar .navbar-nav > li > a.btn.btn-primary {
+    box-shadow: 0 2px 2px 0 rgba(5,5,85, 0.14), 0 3px 1px -2px rgba(5,5,85, 0.2), 0 1px 5px 0 rgba(5,5,85, 0.12);
+}
+.btn.btn-primary:hover, .navbar .navbar-nav > li > a.btn.btn-primary:hover {
+    box-shadow: 3px 8px 8px 0 rgba(5,5,85, 0.25), 0 3px 1px -2px rgba(5,5,85, 0.35), 0 1px 5px 0 rgba(5,5,85, 0.25);
+}
+.dropdown-menu li > a:hover{
+    background-color: #050555!important;
+}
+.nav-pills > li.active > a, .nav-pills > li.active > a:focus, .nav-pills > li.active > a:hover {
+    background-color: #050555!important;
+    color: #FFFFFF!important;
+    box-shadow: 0 16px 26px -10px rgba(5,5,85, 0.56), 0 4px 25px 0px rgba(5,5,85, 0.12), 0 8px 10px -5px rgba(5,5,85, 0.2);
+}
+
+@import "common_compatible.scss";

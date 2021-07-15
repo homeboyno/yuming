@@ -1,0 +1,473 @@
+/* line 1, ../../scss/workbench.scss */
+#content-container {
+  border: 1px solid #aaa;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+/* line 8, ../../scss/workbench.scss */
+#formatting-container {
+  border-bottom: 1px solid #ccc;
+  background-color: white;
+}
+
+/* line 13, ../../scss/workbench.scss */
+#editor-container {
+  height: 400px;
+  background-color: white;
+}
+
+/* line 18, ../../scss/workbench.scss */
+.ql-editor {
+  border: 2px solid #BCBCBC;
+  padding: 10px;
+}
+
+/* line 24, ../../scss/workbench.scss */
+.OptionColumn {
+  padding: 0;
+  border-right: 1px solid rgba(0, 0, 0, 0.12);
+  -webkit-transition: all linear 0.3s;
+          transition: all linear 0.3s;
+  overflow: hidden;
+}
+/* line 29, ../../scss/workbench.scss */
+.OptionColumn > .content {
+  overflow-x: hidden;
+  overflow-y: auto;
+  scrollbar-face-color: white;
+}
+
+/* line 36, ../../scss/workbench.scss */
+.OptionEditor {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* line 42, ../../scss/workbench.scss */
+.OptionRow {
+  width: 100%;
+  margin-top: 0px;
+  padding: 0px;
+  height: 60px;
+  text-align: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  position: relative;
+}
+/* line 50, ../../scss/workbench.scss */
+.OptionRow p {
+  line-height: 60px;
+  margin: 0;
+}
+/* line 54, ../../scss/workbench.scss */
+.OptionRow.active {
+  background-color: #3F6184;
+  color: white;
+}
+/* line 58, ../../scss/workbench.scss */
+.OptionRow.waiting {
+  border-left: 4px solid #E7B270;
+}
+/* line 61, ../../scss/workbench.scss */
+.OptionRow.success {
+  border-left: 4px solid #5cb85c;
+}
+/* line 64, ../../scss/workbench.scss */
+.OptionRow.closed {
+  border-left: 4px solid #ddd;
+}
+/* line 67, ../../scss/workbench.scss */
+.OptionRow .Close {
+  line-height: 60px;
+  width: 20px;
+  height: 60px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 999;
+  background: gradient(linear, 0 0, 0 100%, from(#fff), to(gray));
+}
+/* line 77, ../../scss/workbench.scss */
+.OptionRow .mult-choose {
+  float: left;
+  margin-left: 20px;
+}
+/* line 80, ../../scss/workbench.scss */
+.OptionRow .mult-choose i {
+  vertical-align: middle;
+  font-size: 21px;
+  line-height: 60px;
+}
+
+/* line 88, ../../scss/workbench.scss */
+.OptionFixBottom {
+  position: absolute;
+  bottom: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  -webkit-transition: all 0.2s linear;
+          transition: all 0.2s linear;
+  overflow: hidden;
+}
+
+/* line 96, ../../scss/workbench.scss */
+.nopadding {
+  padding: 0;
+}
+
+/* line 100, ../../scss/workbench.scss */
+.modal-body {
+  overflow: auto;
+  min-height: 50px;
+}
+/* line 103, ../../scss/workbench.scss */
+.modal-body .item {
+  border-bottom: 1px solid #e5e5e5;
+  padding: 10px;
+}
+
+/* line 109, ../../scss/workbench.scss */
+.error-tip {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1090;
+  background-color: transparent;
+}
+/* line 117, ../../scss/workbench.scss */
+.error-tip .tip {
+  width: 200px;
+  height: 100px;
+  margin: auto;
+  margin-top: 200px;
+  background-color: #000;
+  opacity: .5;
+  -webkit-border-radius: 5px;
+          border-radius: 5px;
+  padding-top: 40px;
+}
+/* line 126, ../../scss/workbench.scss */
+.error-tip .tip p {
+  width: 100%;
+  color: white;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* line 135, ../../scss/workbench.scss */
+.portrait {
+  width: 200px;
+  height: 200px;
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
+  background-color: #e5e5e5;
+  overflow: hidden;
+  padding: -3px;
+}
+/* line 142, ../../scss/workbench.scss */
+.portrait img {
+  width: 100%;
+}
+
+/* line 147, ../../scss/workbench.scss */
+.entry-manager {
+  background: #303641;
+}
+/* line 149, ../../scss/workbench.scss */
+.entry-manager .OptionRow {
+  border: 0;
+  height: 35px;
+  text-align: left;
+}
+/* line 153, ../../scss/workbench.scss */
+.entry-manager .OptionRow p {
+  padding-left: 35px;
+  color: white;
+  line-height: 35px;
+}
+/* line 158, ../../scss/workbench.scss */
+.entry-manager .OptionRow .submenu {
+  background: #282B35;
+}
+/* line 160, ../../scss/workbench.scss */
+.entry-manager .OptionRow .submenu p {
+  padding-left: 45px;
+  color: white;
+}
+/* line 165, ../../scss/workbench.scss */
+.entry-manager .OptionRow .submenu.active {
+  background: #31708F;
+}
+/* line 169, ../../scss/workbench.scss */
+.entry-manager .OptionRow.active {
+  height: auto;
+  background: #18bc9c;
+}
+
+/* line 175, ../../scss/workbench.scss */
+.company-image {
+  min-width: 200px;
+  height: 200px;
+}
+/* line 178, ../../scss/workbench.scss */
+.company-image img {
+  min-width: 200px;
+  height: 200px;
+}
+
+/* line 184, ../../scss/workbench.scss */
+.NewsTitle {
+  border: 0;
+  font-size: 24px;
+  margin-left: 20px;
+  width: 80%;
+}
+/* line 189, ../../scss/workbench.scss */
+.NewsTitle:focus {
+  outline: none;
+  outline-offset: none;
+}
+
+/* line 195, ../../scss/workbench.scss */
+.workbench-select {
+  width: 150px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  height: 30px;
+  font-size: 14px;
+}
+
+/* line 203, ../../scss/workbench.scss */
+.mypagination {
+  height: 30px;
+  width: 100%;
+  list-style-type: none;
+  margin-bottom: 0;
+  -webkit-padding-start: 0px;
+  border-bottom: 1px solid #ddd;
+}
+/* line 210, ../../scss/workbench.scss */
+.mypagination li {
+  float: left;
+  width: 20%;
+  height: 30px;
+  border-right: 1px solid #ddd;
+}
+/* line 215, ../../scss/workbench.scss */
+.mypagination li button {
+  width: 100%;
+  height: 28px;
+  line-height: 28px;
+  border: 0;
+  background: white;
+}
+/* line 222, ../../scss/workbench.scss */
+.mypagination li .fa {
+  width: 100%;
+  height: 28px;
+  line-height: 28px;
+}
+/* line 228, ../../scss/workbench.scss */
+.mypagination li.active button {
+  background: #2a6496;
+  color: white;
+}
+
+/* line 234, ../../scss/workbench.scss */
+.page-redirect {
+  width: 100%;
+  height: 30px;
+  text-align: left;
+}
+
+/* line 240, ../../scss/workbench.scss */
+.page-redirect input {
+  width: 50%;
+  height: 30px;
+  float: left;
+  text-align: center;
+  border: 0;
+  border-bottom: 1px solid black;
+  background: transparent;
+}
+
+/* line 250, ../../scss/workbench.scss */
+.page-redirect label {
+  width: 50%;
+  height: 30px;
+  line-height: 30px;
+  float: left;
+  text-align: center;
+}
+
+/* line 258, ../../scss/workbench.scss */
+.OptionFixBottom.long {
+  position: relative;
+  height: 36px;
+  border: 0;
+  margin-left: 20px;
+  margin-top: 30px;
+}
+/* line 264, ../../scss/workbench.scss */
+.OptionFixBottom.long .mypagination {
+  border: 0;
+  float: left;
+  width: 504px;
+}
+/* line 268, ../../scss/workbench.scss */
+.OptionFixBottom.long .mypagination li:first-child {
+  -webkit-border-radius: 5px 0 0 5px;
+          border-radius: 5px 0 0 5px;
+  border-left: 1px solid #ddd;
+  overflow: hidden;
+}
+/* line 273, ../../scss/workbench.scss */
+.OptionFixBottom.long .mypagination li:last-child {
+  -webkit-border-radius: 0 5px 5px 0;
+          border-radius: 0 5px 5px 0;
+  border-right: 1px solid #ddd;
+  overflow: hidden;
+}
+/* line 278, ../../scss/workbench.scss */
+.OptionFixBottom.long .mypagination li {
+  width: 36px;
+  height: 36px;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+/* line 283, ../../scss/workbench.scss */
+.OptionFixBottom.long .mypagination li button {
+  height: 34px;
+}
+/* line 288, ../../scss/workbench.scss */
+.OptionFixBottom.long .page-redirect {
+  float: left;
+  width: 100px;
+}
+
+/* line 294, ../../scss/workbench.scss */
+.SearchReset {
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  right: 10px;
+  top: 12px;
+}
+/* line 300, ../../scss/workbench.scss */
+.SearchReset i {
+  font-size: 20px;
+}
+
+/* line 305, ../../scss/workbench.scss */
+.Manager,
+.portrait {
+  position: relative;
+}
+
+/* line 310, ../../scss/workbench.scss */
+.Manager .portrait {
+  width: 100px;
+  height: 100px;
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+/* line 318, ../../scss/workbench.scss */
+.portrait.notShow img {
+  -webkit-filter: grayscale(1);
+  /* Webkit */
+  filter: gray;
+  /* IE6-9 */
+  -webkit-filter: grayscale(1);
+          filter: grayscale(1);
+  /* W3C */
+}
+
+/* line 327, ../../scss/workbench.scss */
+.portrait img {
+  width: 100%;
+}
+
+/* line 331, ../../scss/workbench.scss */
+.choosed {
+  color: #5cb85c;
+  font-size: 20px;
+  z-index: 20;
+}
+
+/* line 339, ../../scss/workbench.scss */
+.content.long .OptionRow {
+  text-align: left;
+  padding-left: 40px;
+  height: 40px;
+}
+/* line 343, ../../scss/workbench.scss */
+.content.long .OptionRow p {
+  line-height: 40px;
+}
+/* line 346, ../../scss/workbench.scss */
+.content.long .OptionRow .mult-choose {
+  margin-right: 20px;
+}
+/* line 348, ../../scss/workbench.scss */
+.content.long .OptionRow .mult-choose i {
+  line-height: 40px;
+}
+
+/* line 355, ../../scss/workbench.scss */
+.search-input {
+  text-align: center;
+}
+
+/* line 359, ../../scss/workbench.scss */
+.search-input {
+  border: 0;
+  background: transparent;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border-bottom: 1px solid #ddd;
+  -webkit-border-radius: 0;
+          border-radius: 0;
+}
+/* line 365, ../../scss/workbench.scss */
+.search-input:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+/* line 370, ../../scss/workbench.scss */
+.row-font {
+  line-height: 60px;
+  float: right;
+  margin-right: 20px;
+  font-size: 20px;
+}
+
+/* line 377, ../../scss/workbench.scss */
+.workstyleList {
+  float: left;
+}
+/* line 379, ../../scss/workbench.scss */
+.workstyleList .item {
+  width: 150px;
+  height: 150px;
+  background-size: cover;
+  overflow: hidden;
+  margin: 10px;
+  position: relative;
+}
+/* line 386, ../../scss/workbench.scss */
+.workstyleList .item .workstyle-close {
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+/* line 392, ../../scss/workbench.scss */
+.workstyleList .item .workstyle-close i {
+  color: white;
+}

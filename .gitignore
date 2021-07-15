@@ -1,0 +1,55 @@
+# yii console command
+/yii
+
+# phpstorm project files
+.idea
+
+# netbeans project files
+nbproject
+
+# zend studio for eclipse project files
+.buildpath
+.project
+.settings
+
+# windows thumbnail cache
+Thumbs.db
+
+# composer vendor dir
+/vendor
+
+# composer itself is not needed
+composer.phar
+
+#node_modules
+node_modules/
+# Mac DS_Store Files
+.DS_Store
+
+# phpunit itself is not needed
+phpunit.phar
+# local phpunit config
+/phpunit.xml
+
+# vagrant runtime
+/.vagrant
+
+
+www/dashboard/assets
+www/assets
+www/images/upload
+www/images/News
+www/images/Glory
+www/images/avatar.jpg
+log.txt
+www/file/News
+www/file/news/*
+
+oci8
+pdo_oci
+config*.m4
+instantclient-*.zip
+!www/file/news/placeholder
+
+ushinef*.sql
+NewDockerfile_php

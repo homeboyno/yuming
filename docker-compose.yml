@@ -1,0 +1,43 @@
+web:
+    image: nginx:latest
+    ports:
+        - "8080:8080"
+        - "443:443"
+    volumes:
+        - ./:/code
+        - ./site.conf:/etc/nginx/conf.d/site.conf
+        - ./www.ushinef.com.crt:/etc/nginx/ssl/www.ushinef.com.crt
+        - ./www.ushinef.com.key:/etc/nginx/ssl/www.ushinef.com.key
+    links:
+        - php
+    privileged: true
+
+php:
+    image: registry.cn-hangzhou.aliyuncs.com/haoji/ushinef_php:1.2
+    volumes:
+        - ./:/code
+        - ./php.ini:/usr/local/etc/php/php.ini
+    privileged: true
+    links:
+        - redis
+        - mysql
+
+redis:
+    image: index.alauda.cn/tutum/redis:latest
+    ports:
+        - "6379:6379"
+    environment:
+        - REDIS_PASS=verysecret
+
+mysql:
+    image: index.alauda.cn/tutum/mysql:latest
+    volumes:
+        - ./:/code
+    ports:
+        - "3306:3306"
+    volumes:
+        - ./:/code
+    environment:
+        - MYSQL_PASS=verysecret
+        - ON_CREATE_DB=ushine
+

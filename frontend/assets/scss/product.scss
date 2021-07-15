@@ -1,0 +1,64 @@
+@import '_variables.scss';
+
+.basic-info-card {
+    width: 70%;
+    .card-title {
+        margin-top: 1em;
+    }
+    .table {
+        tbody > tr > td { 
+            color: white; 
+            border-top: 0;
+            border-bottom: 1px solid rgba(153, 153, 153, 0.3)
+        }
+        tbody > tr:last-child > td {
+            border-bottom: 0;
+        }
+    }
+}
+#basic-info{
+    position: relative;
+}
+.manager-card {
+    right: 0;
+    z-index: 1;
+    position: absolute;
+    top:-30px;
+    width: 29%;
+    .card-description {
+        max-height: 12.3em;
+        overflow: hidden;
+    }
+    .category {
+        margin: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .manager-card {
+        width: 100%;
+        position: static;
+    }
+    .basic-info-card {
+        width: 100%;
+        }
+}
+
+.table tr {
+    cursor: pointer;
+}
+
+.sweet-alert .text-muted {
+    font-size: 14px;
+}
+
+#canvas-pager {
+    & > .pagination > li > span {
+        color: $brand-primary;
+        cursor: pointer;
+    }
+    & > .pagination > li.disabled > span {
+        color: #777;
+        cursor: not-allowed;
+    }
+} 

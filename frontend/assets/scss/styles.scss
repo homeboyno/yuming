@@ -1,0 +1,1236 @@
+@import "_gradients.scss";
+@import '_variables.scss';
+
+@import "_global.scss";
+
+/* ==========================================================================
+Buttons
+========================================================================== */
+#portrait {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #fff;
+    margin: 0;
+    border: 2px $blue solid;
+    font-size: 23px;
+    text-align: center;
+    color: $blue;
+    font-weight: 800;
+    display: inline-block;
+    i.fa-user {
+        vertical-align: middle;
+        top: 0;
+        margin: 0;
+    }
+}
+
+@media (max-width: 992px) {
+    #portrait {
+        position: absolute;
+        top: 80px;
+        right: 105px;
+    }
+}
+
+/* ==========================================================================
+Navigation
+========================================================================== */
+
+// animation
+.Navbar > .u-navbar-nav > span {
+    &:hover::after {
+        width: 100%;
+        transition: all 0.2s ease-in-out;
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 2px;
+        width: 0%;
+        background: #ffffff;
+        transition: all 0.2s ease-in-out;
+    }
+}
+
+/* ==========================================================================
+Footer
+========================================================================== */
+.us-footer {
+    box-shadow: 0 2px 20px #CCC;
+}
+
+/* ==========================================================================
+umodals
+========================================================================== */
+
+//
+// umodals
+// --------------------------------------------------
+// .modal-open      - body class for killing the scroll
+// .modal           - container to scroll within
+// .modal-dialog    - positioning shell for the actual modal
+// .modal-content   - actual modal w/ bg and corners and shit
+// Kill the scroll on the body
+$zindex-umodal: 9999;
+$umodal-content-bg: transparent;
+$umodal-content-border-color: transparent;
+$umodal-content-fallback-border-color: transparent;
+$umodal-backdrop-bg: gradient(linear,
+0 0,
+0 100%,
+from($brand-primary),
+to($blue));
+$umodal-backdrop-opacity: 1;
+$umodal-title-padding: 10px;
+$umodal-header-border-color: transparent;
+$umodal-title-line-height: 30px;
+$umodal-inner-padding: 20px;
+$umodal-footer-border-color: transparent;
+$umodal-md: 500px;
+$umodal-sm: 300px;
+$umodal-lg: 600px;
+$border-radius-large: 0;
+$zindex-umodal-background: 1040;
+@mixin transition-transform($transition...) {
+    -webkit-transition: -webkit-transform $transition;
+    -moz-transition: -moz-transform $transition;
+    -o-transition: -o-transform $transition;
+    transition: transform $transition;
+}
+
+@mixin translate($x,
+$y) {
+    -webkit-transform: translate($x, $y);
+    -ms-transform: translate($x, $y); // IE9 only
+    -o-transform: translate($x, $y);
+    transform: translate($x, $y);
+}
+
+.umodal-open {
+    overflow: hidden;
+    .umodal {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+}
+
+// Container that the umodal scrolls within
+.modal.ushinef-modal {
+    display: none;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: $zindex-umodal;
+    -webkit-overflow-scrolling: touch;
+    // Prevent Chrome on Windows from adding a focus outline. For details, see
+    // https://github.com/twbs/bootstrap/pull/10951.
+    outline: 0;
+    // When fading in the umodal, animate it to slide down
+    &.fade .modal-dialog {
+        @include translate(0,
+        -25%);
+        @include transition-transform(0.3s ease-out);
+    }
+    &.in .modal-dialog {
+        @include translate(0,
+        0)
+    }
+    iframe { border: 0; }
+    .modal-content {
+        text-align: center;
+        margin-top: 70px;
+        position: relative;
+        background-color: $umodal-content-bg;
+        border: 1px solid $umodal-content-fallback-border-color; //old browsers fallback (ie8 etc)
+        border: 1px solid $umodal-content-border-color;
+        border-radius: $border-radius-large;
+        background-clip: padding-box;
+        box-shadow: none;
+        // Remove focus outline from opened umodal
+        outline: 0;
+    }
+    .modal-dialog {
+        position: relative;
+        width: auto;
+        margin: 10px;
+    }
+
+    // umodal body
+    // Where all umodal content resides (sibling of .umodal-header and .umodal-footer)
+    .modal-body {
+        position: relative;
+        padding: $umodal-inner-padding;
+    }
+
+    .modal-body {
+        label {
+            display: none;
+            width: 300px;
+            font-size: 16px;
+            color: white;
+            margin: 0 auto;
+            text-align: left;
+        }
+    }
+
+    // Measure scrollbar width for padding body during umodal show/hide
+    .modal-scrollbar-measure {
+        position: absolute;
+        top: -9999px;
+        width: 50px;
+        height: 50px;
+        overflow: scroll;
+    }
+}
+
+.modal-header.ushinef-modal {
+    padding: $umodal-title-padding;
+    border-bottom: 1px solid $umodal-header-border-color;
+    min-height: ($umodal-title-padding + $umodal-title-line-height);
+    margin: 0 auto 20px auto;
+    // Title text within header
+    .modal-title {
+        margin: 0 auto;
+        line-height: $umodal-title-line-height;
+        text-align: center;
+        color: white;
+    }
+}
+
+// Footer (for actions)
+.modal-footer.ushinef-modal {
+    padding: $umodal-inner-padding;
+    text-align: right; // right align buttons
+    border-top: 1px solid $umodal-footer-border-color;
+    clear: both; // clear it in case folks use .pull-* classes on buttons
+    // Properly space out buttons
+    .btn + .btn {
+        margin-left: 5px;
+        margin-bottom: 0; // account for input[type="submit"] which gets the bottom margin like all other inputs
+    }
+    // but override that for button groups
+    .btn-group .btn + .btn {
+        margin-left: -1px;
+    }
+    // and override it for block buttons as well
+    .btn-block + .btn-block {
+        margin-left: 0;
+    }
+}
+
+// umodal background
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: $zindex-umodal-background;
+    @include gradient-vertical($blue, $brand-primary);
+    // Fade for backdrop
+    &.fade {
+        opacity: 0;
+    }
+    &.in {
+        opacity: 1;
+    }
+}
+
+.modal-body {
+    input.form-control {
+        box-shadow: none;
+    }
+}
+
+.no-rgba {
+    .error {
+        background-color: gray;
+    }
+}
+
+.UserTrigger {
+    margin: 0 auto;
+    height: 40px;
+    border-bottom: 1px solid white;
+    width: 300px;
+    button {
+        background-color: rgba(0, 0, 0, 0);
+        border: 0px;
+        height: 40px;
+        color: white;
+        font-size: 16px;
+    }
+}
+
+.site-login, .site-register {
+    .btn-ushinef {
+        width: 300px;
+        height: 45px;
+        color: white;
+        border: 2px solid white;
+        border-radius: 3px;
+        display: inline-block;
+        background-color: rgba(0, 0, 0, 0);
+        line-height: 40px;
+        &.btn-sm {
+            background: rgba(0, 0, 0, 0);
+            color: white;
+            border: 2px solid white;
+            height: 40px;
+            border-radius: 3px;
+            width: 120px;
+            line-height: 20px;
+        }
+    }
+    .form-group {
+        padding: 20px 0;
+        padding-top: 0px;
+        text-align: center;
+        width: 100%;
+        .help-block { display: none; }
+        .form-control { box-shadow: none; }
+        .mult {
+            width: 300px;
+            margin: auto;
+            overflow: auto;
+        }
+        .verify {
+            width: 150px;
+        }
+        input {
+            width: 300px;
+            height: 40px;
+            border: 0px;
+            display: inline;
+            line-height: 40px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
+            padding-left: 20px;
+            outline: 0;
+            &::-webkit-input-placeholder {
+                color: white;
+            }
+        }
+        .help-block {
+            width: 300px;
+            color: rgba(255, 255, 255, 0.3);
+            text-align: left;
+            padding-left: 55px;
+        }
+        .select {
+            width: 150px;
+            float: left;
+            color: white;
+            input {
+                width: 20px;
+                height: 20px;
+                float: left;
+                margin-left: 20px;
+            }
+            p {
+                float: left;
+                margin: 0;
+            }
+        }
+    }
+    .multiple {
+        width: 100%;
+        display: block;
+        .form-group {
+            display: inline-block; width: 150px;
+            input { width: 150px; }
+        }
+        .gap { width: 40px; display: inline-block;}
+        img { display: inline-block; width: 100px; height: 40px;}
+    }
+    .summary {
+        width: 300px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.3);
+        margin: 0 auto 20px auto;
+        line-height: 40px;
+        color: white;
+        display: none;
+    }
+}
+
+.site-register .form-group { margin-bottom: 0; }
+
+// Scale up the umodal
+@media (min-width: 768px) {
+    // Automatically set umodal's width for larger viewports
+    .modal.ushinef-modal {
+        .modal-dialog {
+            width: $umodal-md;
+            margin: 30px auto;
+        }
+        .modal-content {
+            margin-top: 100px;
+        }
+        // umodal sizes
+        .modal-sm {
+            width: $umodal-sm;
+        }
+    }
+}
+
+@media (min-width: 1240px) {
+    .umodal-lg {
+        width: $umodal-lg;
+    }
+}
+
+@media (max-width: 375px) {
+    .umodal-body {
+        .input-group {
+            input {
+                width: 250px;
+            }
+            button {
+                width: 250px;
+            }
+            button.sm {
+                width: 100px;
+                float: left;
+                margin-left: 20px;
+            }
+            .verify {
+                width: 130px;
+            }
+        }
+    }
+    .UserTrigger {
+        width: 250px;
+    }
+}
+
+.modal,
+.umodal {
+    overflow-y: scroll;
+}
+
+/*--------------------------------------------
+SideBar
+--------------------------------------------*/
+
+.sidebar-nav {
+    position: relative;
+    width: 200px;
+    top: 0;
+    left: -40px;
+    .list-group {
+        width: 100%;
+    }
+    .list-group-item {
+        width: 100%;
+        a {
+            color: black;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar-nav {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+    .sidebar-nav {
+        display: none;
+    }
+}
+
+@media (min-width: 992px) {
+    .sidebar-nav {
+        width: 220px;
+    }
+}
+
+.nav.sidebar > li > a {
+    color: black;
+    padding: 0 10px;
+    font-size: 14px;
+    font-weight: normal;
+    height: 30px;
+    line-height: 30px;
+    transition: all linear 0.1s;
+    &:focus,
+    &:hover {
+        text-decoration: none;
+        background-color: transparent;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6)
+    }
+}
+
+.nav.sidebar > li {
+    transition: all linear 0.1s;
+    &:focus,
+    &:hover {
+        text-decoration: none;
+        background-color: transparent;
+        border-left: 1px solid $brand-primary;
+    }
+    &.active {
+        border-left: 2px solid $brand-primary;
+    }
+}
+
+@media (min-width: 768px) {
+    .sidebar-nav {
+        padding-left: 20px;
+    }
+}
+
+.list-group-item.active {
+    z-index: 0;
+    a {
+        color: white;
+    }
+}
+
+/* ==========================================================================
+Features List
+========================================================================== */
+.fund-list {
+    padding: 0;
+    padding-bottom: 50px;
+    h1 {
+        padding: 0;
+        color: #24374b;
+        font-size: 20px;
+    }
+    p {
+        margin-bottom: 20px;
+        color: #778899;
+    }
+}
+
+.fund {
+    text-align: center;
+    transition: linear all 0.2s;
+    &:hover {
+        margin-top: 0px;
+        transform: scale(1.1);
+    }
+}
+
+.fund-content {
+    display: inline-block;
+    margin-left: 0;
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+    max-width: 350px;
+    padding: 0 5%;
+    a {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+}
+
+.fund-icon {
+    margin-right: 25px;
+    width: 90px;
+    height: 90px;
+    border: solid 2px $brand-primary;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 25px;
+    line-height: 90px;
+    display: block;
+    margin: 0 auto;
+    p {
+        color: $brand-primary;
+        font-size: inherit;
+        text-rendering: auto;
+        display: inline-block;
+        font-weight: 900;
+        margin: 0;
+        line-height: 86px;
+        vertical-align: middle;
+    }
+    i {
+        color: $brand-primary;
+        font-size: 34px;
+        margin-top: 28px;
+    }
+}
+
+.fund-card {
+    background: rgb(78, 155, 163);
+    border-radius: 3px;
+    margin: auto;
+    width: 100%;
+    .info {
+        padding: 20px 30px 5px 30px;
+        width: 100%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        text-align: left;
+        .title {
+            color: rgba(255, 255, 255, 0.6);
+            margin: 0.5em 0;
+        }
+        .number {
+            color: white;
+            font-size: 35px;
+            font-family: $font-family;
+
+        }
+    }
+    canvas {
+        margin-top: 15px;
+        height: 80px;
+        width: 100%;
+    }
+}
+
+.wp1,
+.wp2,
+.wp3,
+.wp4,
+.wp5,
+.wp6 {
+    visibility: hidden;
+}
+
+.bounceInLeft,
+.bounceInRight,
+.fadeInUp,
+.fadeInUpDelay,
+.fadeInDown,
+.fadeInUpD,
+.fadeInLeft,
+.fadeInRight,
+.bounceInDown {
+    visibility: visible;
+}
+
+
+/* ==========================================================================
+Navbar
+========================================================================== */
+
+.Navbar {
+    position: absolute;
+    top: 0;
+    right: 20px;
+    margin-top: 10px;
+    z-index: 100;
+    .u-navbar-nav {
+        span {
+            float: left;
+            margin: 15px;
+            font: inherit;
+            font-size: 1.2em;
+            color: white;
+            z-index: 100;
+            cursor: pointer;
+            a {
+                color: white;
+                font-size: 1em;
+            }
+        }
+        span.active {
+            color: $brand-primary;
+        }
+        span.blue {
+            color: $brand-primary;
+        }
+        button {
+            margin-top: 10px;
+            z-index: 100;
+        }
+    }
+    & > .navbar-trigger {
+        display: none;
+    }
+}
+
+.animated-02s {
+    -webkit-animation-duration: 0.2s;
+    animation-duration: 0.2s;
+}
+
+.animated-04s {
+    -webkit-animation-duration: 0.4s;
+    animation-duration: 0.4s;
+}
+
+.Navbar.active {
+    span {
+        color: $brand-primary;
+    }
+}
+
+@media (max-width: 992px) {
+    .Navbar {
+        right: 0;
+        & > .u-navbar-nav {
+            width: 280px;
+            height: 100%;
+            top: 0;
+            right: 0;
+            margin-top: 180px;
+            text-align: center;
+            display: none;
+            span {
+                width: 100%;
+                margin: 0;
+                padding-bottom: 10px;
+                padding-top: 10px;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+            }
+            button {
+                margin: 10px 0;
+            }
+        }
+    }
+    .Navbar > .navbar-trigger {
+        display: block;
+        background: transparent;
+        border: 0;
+    }
+}
+
+.menu-overlay {
+    position: fixed;
+    width: 0;
+    height: 100%;
+    right: 0;
+    z-index: 99;
+    transition: all 0.6s ease-out;
+    @include gradient-vertical($blue, $brand-primary);
+    overflow: hidden;
+    &.active {
+        width: 66.6%;
+    }
+    & > .content {
+        width: 100%;
+        margin-top: 10%;
+        height: 90%;
+        overflow: auto;
+        position: absolute;
+        right: -15px;
+        overflow-x: hidden;
+    }
+    .content > div {
+        display: none;
+    }
+}
+
+@media (max-width: 992px) {
+    .menu-overlay {
+        &.menu {
+            width: 280px;
+        }
+        &.active {
+            width: 100%;
+        }
+        & > .content {
+            right: 0;
+        }
+    }
+}
+
+.left-menu-overlay {
+    width: 0;
+    height: 0;
+    z-index: 3;
+    position: fixed;
+    &.active {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.nav-toggle {
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    z-index: 999999;
+    cursor: pointer;
+}
+
+@media (max-width: 992px) {
+    .nav-toggle {
+        right: 50px;
+    }
+}
+
+.nav-toggle:focus {
+    outline: none;
+}
+
+.nav-toggle span,
+.nav-toggle span:before,
+.nav-toggle span:after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 35px;
+    height: 5px;
+    border-radius: 1px;
+    background: #fff;
+    cursor: pointer;
+}
+
+.nav-toggle.blue span,
+.nav-toggle.blue span:before,
+.nav-toggle.blue span:after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 35px;
+    height: 5px;
+    border-radius: 1px;
+    background: $brand-primary;
+    cursor: pointer;
+}
+
+.nav-toggle span:before {
+    top: -10px
+}
+
+.nav-toggle span:after {
+    bottom: -10px
+}
+
+.nav-toggle span,
+.nav-toggle span:before,
+.nav-toggle span:after {
+    -webkit-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+}
+
+.nav-toggle.active span {
+    background-color: transparent
+}
+
+.nav-toggle.active span:before,
+.nav-toggle.active span:after {
+    top: 0
+}
+
+.nav-toggle.active span:before {
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.nav-toggle.active span:after {
+    top: 10px;
+    -webkit-transform: translateY(-10px) rotate(-45deg);
+    -ms-transform: translateY(-10px) rotate(-45deg);
+    transform: translateY(-10px) rotate(-45deg);
+}
+
+.fund-content {
+    a,
+    h1 {
+        color: white;
+    }
+    h1 {
+        font-size: 1.5em;
+    }
+}
+
+.u-menu-list {
+    text-align: center;
+    margin-top: 50px;
+    a {
+        border: 1px white solid;
+        color: white;
+        padding: 10px 30px;
+        border-radius: 30px;
+        white-space: nowrap;
+    }
+}
+
+/*==================================
+Site News
+==================================*/
+.news {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
+    transition: all linear 0.2s;
+    overflow: auto;
+    &:hover {
+        transform: scale(1.05);
+    }
+    .news-img {
+        height: 180px;
+        width: 100%;
+        background-size: cover;
+        position: relative;
+        background-position: center center;
+    }
+    .news-title {
+        width: 100%;
+        float: left;
+        padding: 10px 15px;
+        background-color: white;
+        h2 {
+            overflow: hidden;
+            display: block; //内联对象需加
+            // width: 12em; //指定宽度
+            width: 100%;
+            // word-break: keep-all; //不换行
+            // white-space: nowrap; //强制在同一行内显示所有文本，直到文本结束或者遭遇 br 对象。不换行
+            // overflow: hidden;
+            margin: 0.5em 0;
+        }
+        p {
+            font-size: 1em;
+            width: 100%;
+        }
+        p.content {
+            text-indent: 2em;
+            line-height: 1.2em;
+            height: 3.4em;
+            overflow: hidden;
+            font-size: 1em;
+        }
+        p.createtime {
+            margin: 0.25em 0;
+            color: gray;
+            font-size: 1em;
+            line-height: 1.2em;
+        }
+    }
+}
+.news-list .row {
+    margin-left: 0;
+    margin-right: 0;
+}
+.no-backgroundsize {
+    .news .news-img {
+        behavior: url('/images/backgroundsize.min.htc');
+    }
+}
+
+.no-boxshadow {
+    .news .news-title {
+        border: 1px solid #ddd;
+        border-top: 0;
+        p.content {
+            height: 3.6em;
+        }
+    }
+}
+
+@media (max-width: 320px) {
+    .news {
+        .news-img {
+            height: 140px;
+        }
+    }
+}
+
+@media (min-width: 320px) and (max-width: 414px) {
+    .news {
+        .news-img {
+            height: 140px;
+        }
+    }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+    .news {
+        .news-img {
+            height: 140px;
+        }
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+    .news {
+        .news-img {
+            height: 140px;
+        }
+    }
+}
+/*==================================
+Site News
+==================================*/
+
+#left_slogan {
+    margin-top: 10px;
+    margin-left: 10px;
+    z-index: 2;
+    position: absolute;
+    transition: all 0.4s linear;
+    embed {
+        height: 60px;
+    }
+}
+
+
+/* ==========================================================================
+About Ushinef
+========================================================================== */
+
+.us-title {
+    border-left: 4px solid $blue;
+    padding-left: 15px;
+    margin-left: 15px;
+    p {
+        color: gray;
+    }
+}
+
+.banner-describe {
+    background: #3F6184;
+    padding: 50px 100px;
+    height: 250px;
+    text-align: center;
+    h1 {
+        width: 100%;
+        text-align: center;
+        color: white;
+        font-size: 48px;
+    }
+}
+
+.banner-img {
+    width: 100%;
+    height: 300px;
+    background-image: url('../images/ushinef-pattern-2.svg');
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -ms-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    // background-position: center center;
+    padding: 75px 0;
+    text-align: center;
+    position: relative;
+    h1 {
+        width: 100%;
+        color: white;
+        font-size: 60px;
+        font-weight: 600;
+        text-align: center;
+    }
+    .border {
+        width: 500px;
+        height: 100px;
+        border: 1px solid white;
+        position: absolute;
+        margin: auto;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        border-left: 0;
+        border-right: 0;
+    }
+}
+
+.no-backgroundsize {
+    .banner-img {
+        behavior: url('/images/backgroundsize.min.htc');
+    }
+}
+
+@media (max-width: 414px) {
+    .banner-img {
+        height: 100px;
+        padding: 18px;
+        h1 {
+            font-size: 25px;
+        }
+        .border {
+            display: none;
+        }
+    }
+}
+
+@media (min-width: 414px) and (max-width: 768px) {
+    .banner-img {
+        height: 200px;
+        padding: 25px 0;
+        h1 {
+            font-size: 36px;
+            margin-top: 50px;
+        }
+        .border {
+            display: none;
+        }
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1100px) {
+    .banner-img {
+        height: 200px;
+        padding: 40px 0;
+        h1 {
+            font-size: 50px;
+        }
+        .border {
+            width: 450px;
+        }
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .banner-img {
+        height: 150px;
+        h1 {
+            font-size: 24px;
+            margin-top: 45px;
+        }
+    }
+}
+
+.no-borderradius {
+    .banner-img .Logo {
+        padding: 6px 0 0 10px;
+        background: none;
+    }
+}
+
+.con p {
+    text-indent: 2em;
+}
+
+.con p.first_line {
+    text-indent: 0em;
+}
+
+.Question {
+    width: 100%;
+    clear: both;
+    overflow: auto;
+}
+
+.Question .select {
+    float: left;
+    margin: 5px 10px;
+    line-height: 24px;
+}
+
+.Question i {
+    color: #3F6184;
+    font-size: 18px;
+}
+
+.alert-warning p {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+// .chart-legend {
+//     list-style-type: none;
+// }
+.chart-legend li {
+    // float: left;
+    list-style-type: none;
+}
+
+.chart-legend li span {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-right: 5px;
+}
+
+.sidebar.black {
+    width: 120%;
+    margin-left: -20%;
+    .first-row {
+        background: $brand-primary;
+        color: white;
+        padding: 10px 0 10px 15px;
+        font-size: 1.2em;
+    }
+    .submenu {
+        opacity: 0.9;
+        & > div {
+            background: #282B35;
+
+            &.active {
+                // background: $brown;
+                background-color: $white-color;
+                // @include gradient-horizontal-three-colors($brown-50, $white-color, 90%, $brown-50);
+                @include gradient-radial($brown-150, $brown-50);
+            }
+            &::after {
+                content: '';
+                position: absolute;
+                z-index: 1;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                box-shadow: 0 3px 0 rgba(0, 0, 0, 0.08);
+                -webkit-transition: all .3s ease-in-out;
+                transition: all .3s ease-in-out;
+                opacity: 0;
+                box-shadow: 0 2px 0 rgba(0, 0, 0, 0.08);
+            }
+            &:hover {
+                &::after {
+                    opacity: 1;
+                    -webkit-transform: scaleX(1.06) scaleY(1.03);
+                    transform: scaleX(1.06) scaleY(1.03);
+                }
+                &.active::after {
+                    opacity: 1;
+                    z-index: 1;
+                    background-color: $brown;
+                    -webkit-transform: scaleX(1.06) scaleY(1.03);
+                    transform: scaleX(1.06) scaleY(1.03);
+                }
+            }
+            width: 100%;
+            padding: 10px 0 10px 15px;
+            font-size: 1em;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+            position: relative;
+        }
+        a, p {
+            color: white;
+            display: block;
+            width: 100%;
+            z-index: 99;
+            position: relative;
+        }
+    }
+}
+
+.sidebar.black.multiple {
+    .submenu > div { padding: 10px 0 10px 15px; }
+    p { margin: 0; cursor: pointer;}
+    ul { display: none }
+    ul.open { display: block }
+    ul > li {
+        list-style: none;
+        padding: 15px 0 15px 30px;
+        &.active {
+            background: $brand-primary;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar.black {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+/* ==========================================================================
+Edite
+========================================================================== */
+iframe.edite {
+    width: 100%;
+    min-height: 300px;
+}

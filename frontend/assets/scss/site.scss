@@ -1,0 +1,206 @@
+@import '_variables.scss';
+
+html,
+body,
+{
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+}
+
+span.video, span.glyphicon { position: relative; display: inline-block; margin: -10px 0px 0px 5px; }
+
+@mixin container() {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+}
+
+@mixin overlay() {
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s linear;
+    position: absolute;
+}
+
+.left {
+    @include container();
+    left: 0;
+    p {
+        color: $brand-primary;
+        font-size: 1.2em;
+    }
+    .left-overlay {
+        @include overlay();
+        background: white;
+    }
+    .right-info {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        text-align: left;
+        p {
+            font-size: 0.7em; color: gray; margin: 2px 5px;
+        }
+    }
+}
+
+.right {
+    @include container();
+    right: 0;
+    .right-overlay {
+        @include overlay();
+        overflow: hidden;
+        background: #5f7486;
+        z-index: 1;
+    }
+}
+.login-card {
+    position: absolute;
+    z-index: 10;
+    right: 15%;
+    top: 22%;
+    width: 20%;
+    height: 490px;
+    min-width: 280px;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    overflow: auto;
+    h1 {
+        text-align: left;
+        margin: 0;
+    }
+    .form-group {
+        text-align: left;
+    }
+    input:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0px 1000px white inset;
+        border-bottom: 1px #CCC solid;
+    }
+}
+.content-center{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    .btn-padding{
+        padding: 12px 15px;
+    }
+}
+
+.left-container,
+.right-container {
+    width: 100%;
+    height: 100%;
+}
+
+.center-container {
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    position: absolute;
+    text-align: center;
+    .btn{
+        span{
+            display: inline-block;
+            vertical-align:middle;
+            position: relative;
+            top:4px;
+        }
+    }    
+}
+
+@media (max-width: 1024px) {
+    .login-card {
+        right: 5%;
+        top: 32%;
+        width: 40%;
+    }
+}
+@media (max-width: 768px) {
+    .right {
+        width: 100%;
+        height: 50%;
+    }
+    .left {
+        width: 100%;
+        height: 50%;
+        top: 50%;
+    }
+    .right-info { 
+        width: 100%; 
+    }
+    .login-card {
+        right: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1030;
+        border-radius: 0;
+    }
+    .left {
+        .right-info {
+            .none-for-phone{
+                display: none;
+            }
+        }
+    }
+    .center-container {
+        .btn{
+            .change-for-phone{
+                max-width: 230px;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+        }
+    }
+}
+@media (max-width: 374px) {
+    .left-container,
+    .right-container {
+        h1 {
+            font-size: 2.4em;
+        }
+    }
+}
+
+// Login Register Form
+.form-group {
+    margin-top: 0;
+}
+.form-captcha {
+    display: inline-block;
+    width: 100%;
+    .form-group {
+        width: 60%;
+        display: inline-block;
+    }
+    .captcha {
+        width: 35%;
+    }
+    button {
+        width: 35%;
+    }
+}
+.back, .submit {
+    margin-top: 15px;
+}
+
+.has-error .help-block {
+    color: #f44336;
+}
+
+.field-registerform-type .radio {
+    display: inline-block;
+}
+
+.field-registerform-certificate_type .radio {
+    display: inline-block;
+}

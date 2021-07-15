@@ -1,0 +1,112 @@
+@import "_variables.scss";
+@import "_gradients.scss";
+
+.us-content {
+    p {
+        text-indent: 2em;
+        margin: 0 15px;
+        line-height: 3em;
+    }
+    @media (max-width: 768px) {
+        img {
+            width: 100%;
+            margin: 0 auto;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .us-content {
+        column-count: 1;
+    }
+}
+
+.color-section {
+    background: $brand-primary;
+    min-height: 400px;
+    padding: 80px 50px;
+    overflow: auto;
+    h1, h2, h3, h4, h5, h6, a, span, p {
+        color: white;
+    }
+    h1 {
+        font-size: 3.5em; 
+        margin: 1em 0; 
+    }
+    .describe {
+        width: 60%;
+        margin-left: 20%
+    }
+}
+
+@media (max-width: 768px) {
+    .color-section {
+        h1 {
+            font-size: 2.5em; 
+        }
+        .describe {
+            width: 95%;
+            margin-left: 2.5%
+        }
+    }
+}
+
+
+#about-depart {
+    .carousel-inner .item .dp-card {
+        height: 300px;
+        padding: 20px 80px;
+    }
+}
+
+.workstyle-carousel {
+    width: 100%;
+    min-height: 300px;
+    background-size: cover;
+    @media (max-width: 500px) {
+        min-height: 200px;
+    }
+}
+
+.basic-info {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 80px;
+    h3 {
+        font-weight: 600;
+    }
+    p {
+        margin: 0;
+    }
+}
+
+/* -----------------------------
+    XiQian and JiZhi
+-------------------------------*/
+h3.question {
+    color: red;
+}
+
+.fund-manager {
+    .media {
+        // border: 1px solid #EEE;
+        // box-shadow: 3px 3px 10px 3px #EEE;
+        // border-radius: 5px;
+        margin: 20px 0;
+    }
+    .media .avatar {
+        width: 120px;
+        height: 160px;
+        border-radius: 5px;
+    }
+    .media-heading {
+        font-family: $font-family;
+        font-size: 1.6em;
+        font-weight: 500;
+        margin: 5px 0;
+    }
+    .media p {
+        font-size: 14px;
+        text-indent: 2em;
+    }
+}
