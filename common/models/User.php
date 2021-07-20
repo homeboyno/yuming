@@ -34,9 +34,10 @@ class User extends ActiveRecord implements IdentityInterface {
 	 */
 	public function rules() {
 		return [
-			[['phone', 'username', 'certificate_type', 'certificate'], 'required'],
+			// [['phone', 'username', 'certificate_type', 'certificate'], 'required'],
+			[['phone', 'username'], 'required'],
 			['user_id', 'string', 'length' => 32],
-			[['username', 'password', 'email'], 'string', 'max' => 32],
+			[['username', 'password', 'email'], 'string', 'max' => 64],
 			['phone', 'match', 'pattern' => '/^1[3|4|5|7|8][0-9]\d{4,8}$/'],
 			[['authKey', 'accessToken'], 'string', 'max' => 80],
 			['salt', 'string', 'length' => 5],
@@ -45,11 +46,11 @@ class User extends ActiveRecord implements IdentityInterface {
 			[['agreecontract'], 'boolean'],
 			[['type'], 'number', 'min' => 0],
 			['address', 'string', 'length' => [0, 256]],
-			['certificate_type', 'match', 'pattern' => '/^\d{3}$/'],
+			// ['certificate_type', 'match', 'pattern' => '/^\d{3}$/'],
 			['email', 'match', 'pattern' => '/^([a-zA-Z0-9]+[_|\-|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\-|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/i', 'when' => function ($model) {
 				return strlen($model->email) != 0;
 			}, 'message' => "邮箱格式不合法"],
-			['certificate', 'string', 'length' => [0, 32]],
+			// ['certificate', 'string', 'length' => [0, 32]],
 			['phone', 'unique']
 		];
 	}
@@ -242,9 +243,10 @@ class User extends ActiveRecord implements IdentityInterface {
 	 */
 	public function validatePassword($password) {
 		// 使用yii2自带的hash加密，并验证
-		$encryptPassword = Yii::$app->getSecurity()->generatePasswordHash($password);
+		// $encryptPassword = Yii::$app->getSecurity()->generatePasswordHash($password);
 		// $encryptPassword = hash('md5', $this->salt . $password);
-		return $this->password === $encryptPassword;
+		// return $this->password === $encryptPassword;
+		return Yii::$app->getSecurity()->validatePassword($password, $this->password);
 	}
 
 	// public static function LoginErrorTooMuch($token) {
