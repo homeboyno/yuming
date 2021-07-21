@@ -121,7 +121,8 @@ class SiteController extends Controller {
 	}
 
 	public function actionIndex() {
-		Yii::$app->view->params = [ 'Banner' => false, 'Sidebar' => false, 'Footer' => false ];
+		// $this->layout = false;
+		Yii::$app->view->params = [ 'Banner' => false, 'Sidebar' => false, 'Footer' => true ];
 		return $this->render('index');
 	}
 

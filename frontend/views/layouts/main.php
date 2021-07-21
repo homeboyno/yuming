@@ -4,6 +4,8 @@
 /* @var $content string */
 use yii\helpers\Html;
 
+frontend\assets\MainAsset::register($this);
+
 $url = \Yii::$app->request->getPathInfo();
 $sidebar = explode("/", $url)[0] . "Sidebar";
 ?>
@@ -20,12 +22,12 @@ $sidebar = explode("/", $url)[0] . "Sidebar";
 <body>
 <?php $this->beginBody()?>
 <?php include Yii::$app->basePath . '/views/layouts/Navigation.php';?>
-<div id="main">
+<!-- <div id="main"> -->
     <?php 
         $showBanner = isset($this->params["Banner"]) ? $this->params["Banner"] : true;
-        if ($showBanner) {
-            include Yii::$app->basePath . '/views/layouts/Banner.php';
-        }
+        // if ($showBanner) {
+        //     include Yii::$app->basePath . '/views/layouts/Banner.php';
+        // }
     ?>
     <?php
         $showSidebar = isset($this->params["Sidebar"]) ? $this->params["Sidebar"] : true;
@@ -41,12 +43,14 @@ $sidebar = explode("/", $url)[0] . "Sidebar";
             echo $content;
         }
     ?>
-</div>
+<!-- </div> -->
 <?php
 $showFooter = isset($this->params["Footer"]) ? $this->params["Footer"] : true;
 if ($showFooter) {
 	include Yii::$app->basePath . '/views/layouts/Footer.php';
 }
+
+include Yii::$app->basePath . '/views/layouts/scrolltop.php';
 ?>
 <?php $this->endBody()?>
 </body>

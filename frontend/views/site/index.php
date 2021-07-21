@@ -1,35 +1,45 @@
 <?php
 
-frontend\assets\SiteAsset::register($this);
+// frontend\assets\SiteAsset::register($this);
 use \yii\helpers\Html;
 ?>
 
-<div>
-    <div class="left">
-        <div class="left-overlay"></div>
-        <div class="left-container">
-            <div class="center-container" style="top:-200px">
-                <img class="animated fadeInRight" src="/images/ushineLogo.png" style="width: 50%;" />
-                <!-- <p class="animated fadeInRight"><?=Yii::t('app','友山教育')?></p> -->
-                <p class="animated fadeInRight"><?=Yii::t('app','西南考试教育旗舰店')?></p>
+<div class="banner-area text-capitalized bg-bottom text-light text-default" style="background-image: url(/images/wget/11.png);">
+    <div class="container">
+        <div class="double-items">
+            <div class="row align-center">
+
+                <div class="col-lg-6 info">
+                    <h2 class="wow fadeInRight" data-wow-defaul="300ms">We're building software<strong>to manage business</strong></h2>
+                    <p class="wow fadeInLeft" data-wow-delay="500ms">
+                        Lasted hunted enough an up seeing in lively letter. Had judgment out opinions property the supplied.
+                    </p>
+                    <a class="btn btn-md btn-light effect wow fadeInUp" data-wow-delay="700ms" href="#">Get Started <i class="fas fa-angle-right"></i></a>
+                </div>
+
+                <div class="col-lg-5 offset-lg-1 thumb wow fadeInRight" data-wow-delay="900ms">
+                    <img src="/images/picture/11.png" alt="Thumb">
+                </div>
                 
-            </div>
-        </div>
-        
-        <div class="right-info">
-            <p class="regular none-for-phone"> </p>
-            <p class="regular none-for-phone"> </p>
-        </div>
-    </div>
-    <div class="right">
-        <div class="right-overlay">
-            <!-- <img src="/images/ushinef-pattern-1.svg" style="width: 100%;" /> -->
-            <img src="/images/5addf9a294d92.png" style="width: 100%;height: 100%;" />
-        </div>
-        <div class="right-container">
-            <div class="center-container">
-                <img class="animated fadeInRightBig" src="/images/slogon.png" style="width: 100%;" />
             </div>
         </div>
     </div>
 </div>
+<button class="material-scrolltop" type="button"></button>
+<div class="material-scrolltop"></div>
+
+<style>
+    .banner-area.bg-bottom 
+    {
+        background-size: cover;
+        background-position: bottom center;
+    },
+    .banner-area {
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+    }
+    .double-items > .row div {
+        height: auto;
+    }
+</style>
