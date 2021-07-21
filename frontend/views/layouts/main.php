@@ -50,7 +50,6 @@ if ($showFooter) {
 	include Yii::$app->basePath . '/views/layouts/Footer.php';
 }
 
-include Yii::$app->basePath . '/views/layouts/scrolltop.php';
 ?>
 <?php $this->endBody()?>
 </body>
