@@ -16,7 +16,7 @@ $sidebar = explode("/", $url)[0] . "Sidebar";
     <meta charset="<?=Yii::$app->charset?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?=Html::csrfMetaTags()?>
-    <title>友山教育咨询有限公司</title>
+    <title>裕明环保科技有限公司</title>
     <?php $this->head()?>
 </head>
 <body>
@@ -25,23 +25,23 @@ $sidebar = explode("/", $url)[0] . "Sidebar";
 <!-- <div id="main"> -->
     <?php 
         $showBanner = isset($this->params["Banner"]) ? $this->params["Banner"] : true;
-        // if ($showBanner) {
-        //     include Yii::$app->basePath . '/views/layouts/Banner.php';
-        // }
+        if ($showBanner) {
+            include Yii::$app->basePath . '/views/layouts/Banner.php';
+        }
     ?>
     <?php
-        $showSidebar = isset($this->params["Sidebar"]) ? $this->params["Sidebar"] : true;
-        if ($showSidebar) {
-            $sidebarParams = include Yii::$app->basePath . '/views/layouts/Sidebar.php';
-            $sidebar = \frontend\components\Sidebar::widget([
-                "sidebar" => $sidebarParams[$sidebar]
-            ]);
-            $sidebarWrapper = Html::tag("div", $sidebar, ["class" => "col-lg-2 hidden-xs sidebar-left"]);
-            $contentWrapper = Html::tag("div", $content, ["class" => "col-xs-12 col-lg-10 sidebar-right"]);
-            echo Html::tag("div", $sidebarWrapper . $contentWrapper, ["class" => "container"]);
-        } else {
+        // $showSidebar = isset($this->params["Sidebar"]) ? $this->params["Sidebar"] : true;
+        // if ($showSidebar) {
+        //     $sidebarParams = include Yii::$app->basePath . '/views/layouts/Sidebar.php';
+        //     // $sidebar = \frontend\components\Sidebar::widget([
+        //     //     "sidebar" => $sidebarParams[$sidebar]
+        //     // ]);
+        //     $sidebarWrapper = Html::tag("div", $sidebar, ["class" => "col-lg-2 hidden-xs sidebar-left"]);
+        //     $contentWrapper = Html::tag("div", $content, ["class" => "col-xs-12 col-lg-10 sidebar-right"]);
+        //     echo Html::tag("div", $sidebarWrapper . $contentWrapper, ["class" => "container"]);
+        // } else {
             echo $content;
-        }
+        // }
     ?>
 <!-- </div> -->
 <?php

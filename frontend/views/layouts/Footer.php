@@ -12,69 +12,69 @@ use \yii\helpers\Html;
                 <div class="row">
                     <div class="col-lg-4 col-md-6 item">
                         <div class="f-item about">
-                            <img src="images/picture/logo-light.png" alt="Logo">
+                            <img src="/images/picture/logo-light.png" alt="Logo">
                             <p>
-                                Excellence decisively nay man yet impression for contrasted remarkably. There spoke happy for you are out. Fertile how old address did showing.
+                                XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX（写点心灵鸡汤）
                             </p>
-                            <form action="#">
+                            <!-- <form action="#">
                                 <input type="email" placeholder="Your Email" class="form-control" name="email">
                                 <button type="submit"> <i class="arrow_right"></i></button>  
-                            </form>
+                            </form> -->
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-6 item">
                         <div class="f-item link">
-                            <h4 class="widget-title">Quick LInk</h4>
+                            <h4 class="widget-title">快速通道</h4>
                             <ul>
                                 <li>
-                                    <a href="#"><i class="fas fa-angle-right"></i> Home</a>
+                                    <a href="#"><i class="fas fa-angle-right"></i> 公司首页</a>
                                 </li>
                                 <li>
-                                    <a href="#"><i class="fas fa-angle-right"></i> About us</a>
+                                    <a href="#"><i class="fas fa-angle-right"></i> 公司简介</a>
                                 </li>
                                 <li>
-                                    <a href="#"><i class="fas fa-angle-right"></i> Compnay History</a>
+                                    <a href="#"><i class="fas fa-angle-right"></i> 公司发展</a>
                                 </li>
                                 <li>
-                                    <a href="#"><i class="fas fa-angle-right"></i> Features</a>
+                                    <a href="#"><i class="fas fa-angle-right"></i> 公司团队</a>
                                 </li>
                                 <li>
-                                    <a href="#"><i class="fas fa-angle-right"></i> Blog Page</a>
+                                    <a href="#"><i class="fas fa-angle-right"></i> 公司动态</a>
                                 </li>
                                 <li>
-                                    <a href="#"><i class="fas fa-angle-right"></i> Login</a>
+                                    <!-- <a href="#"><i class="fas fa-angle-right"></i> Login</a> -->
                                 </li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 item">
                         <div class="f-item link">
-                            <h4 class="widget-title">Community</h4>
+                            <h4 class="widget-title">XXXXXX</h4>
                             <ul>
                                 <li>
-                                    <a href="#"><i class="fas fa-angle-right"></i> Career</a>
+                                    <a href="#"><i class="fas fa-angle-right"></i> XXXXX</a>
                                 </li>
                                 <li>
-                                    <a href="#"><i class="fas fa-angle-right"></i> Leadership</a>
+                                    <a href="#"><i class="fas fa-angle-right"></i> XXXXX</a>
                                 </li>
                                 <li>
-                                    <a href="#"><i class="fas fa-angle-right"></i> Strategy</a>
+                                    <a href="#"><i class="fas fa-angle-right"></i> XXXXXX</a>
                                 </li>
                                 <li>
-                                    <a href="#"><i class="fas fa-angle-right"></i> Services</a>
+                                    <a href="#"><i class="fas fa-angle-right"></i> XXXXXX</a>
                                 </li>
                                 <li>
-                                    <a href="#"><i class="fas fa-angle-right"></i> History</a>
+                                    <a href="#"><i class="fas fa-angle-right"></i> XXXXXX</a>
                                 </li>
                                 <li>
-                                    <a href="#"><i class="fas fa-angle-right"></i> Components</a>
+                                    <a href="#"><i class="fas fa-angle-right"></i> XXXXXX</a>
                                 </li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 item">
                         <div class="f-item contact-widget">
-                            <h4 class="widget-title">Contact Info</h4>
+                            <h4 class="widget-title">联系我们</h4>
                             <div class="address">
                                 <ul>
                                     <li>
@@ -82,8 +82,8 @@ use \yii\helpers\Html;
                                             <i class="fas fa-home"></i>
                                         </div>
                                         <div class="content">
-                                            <strong>Address:</strong>
-                                            5919 Trussville Crossings Pkwy, Birmingham
+                                            <strong>公司地址:</strong>
+                                            四川省眉山市高新区
                                         </div>
                                     </li>
                                     <li>
@@ -91,8 +91,8 @@ use \yii\helpers\Html;
                                             <i class="fas fa-envelope"></i>
                                         </div>
                                         <div class="content">
-                                            <strong>Email:</strong>
-                                            <a href="mailto:info@validtheme.com">info@validtheme.com</a>
+                                            <strong>电子邮箱:</strong>
+                                            <a href="#">xxx@xxxx.com</a>
                                         </div>
                                     </li>
                                     <li>
@@ -100,7 +100,7 @@ use \yii\helpers\Html;
                                             <i class="fas fa-phone"></i>
                                         </div>
                                         <div class="content">
-                                            <strong>Phone:</strong>
+                                            <strong>联系电话:</strong>
                                             <a href="tel:2151234567">+123 34598768</a>
                                         </div>
                                     </li>
@@ -116,7 +116,7 @@ use \yii\helpers\Html;
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6">
-                        <p>&copy; Copyright 2021. All Rights Reserved by <a href="#">validthemes</a></p>
+                        <p>&copy; Copyright 2021. 裕明科技环保有限公司 <a href="#">All Rights Reserved.</a></p>
                     </div>
                     <div class="col-lg-6 text-right link">
                         <ul>

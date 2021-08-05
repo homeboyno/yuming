@@ -4406,7 +4406,7 @@ ul.pagination {
 
 .pagination li a {
   display: inline-block;
-  padding: 15px 20px;
+  /* padding: 15px 20px; */
   border-radius: 5px;
   margin: 0 2px;
   color: #4ac4f3;

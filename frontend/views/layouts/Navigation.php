@@ -10,7 +10,7 @@ use yii\helpers\ArrayHelper;
 use yii\helpers\Url;
 
 // $user = Yii::$app->user->identity;
-// $isGuest = (gettype($user) != 'object') || $user->type == 3; // 没取到model即未登录
+// $isGuest = (gettype($user) != 'object') || $user->type == 3; // 没取到model即未登录,目前前台无登陆qing kuang
 
 ?>
 
@@ -33,7 +33,7 @@ use yii\helpers\Url;
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
                         <i class="fa fa-bars"></i>
                     </button>
-                    <a class="navbar-brand" href="index.html">
+                    <a class="navbar-brand" href="/">
                         <img src="/images/logo-light.png" class="logo logo-display" alt="Logo">
                         <img src="/images/picture/logo.png" class="logo logo-scrolled" alt="Logo">
                     </a>
@@ -44,32 +44,28 @@ use yii\helpers\Url;
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav navbar-right" data-in="#" data-out="#">
                         <li class="dropdown active dropdown-right">
-                            <a href="#home" class="dropdown-toggle smooth-menu active" data-toggle="dropdown" >Home</a>
-                            <ul class="dropdown-menu">
-                                <li><a href="index.html">Home Version One</a></li>
-                                <li><a href="index-2.html">Home Version Two</a></li>
-                            </ul>
+                            <a href="#home" class="smooth-menu" data-toggle="dropdown" >首页</a>
                         </li>
                         <li>
-                            <a class="smooth-menu" href="#about">About</a>
+                            <a class="smooth-menu" href="/site/about">公司介绍</a>
                         </li>
                         <li>
-                            <a class="smooth-menu" href="#features">Features</a>
+                            <a class="smooth-menu" href="/news/index">公司动态</a>
                         </li>
                         <li>
-                            <a class="smooth-menu" href="#overview">Overview</a>
+                            <a class="smooth-menu" href="#overview">公司产品</a>
                         </li>
                         <li>
-                            <a class="smooth-menu" href="#team">Team</a>
+                            <a class="smooth-menu" href="#team">公司团队</a>
                         </li>
-                        <li>
+                        <!-- <li>
                             <a class="smooth-menu" href="#pricing">Pricing</a>
                         </li>
                         <li>
                             <a class="smooth-menu" href="#blog">Blog</a>
-                        </li>
+                        </li> -->
                         <li>
-                            <a class="smooth-menu" href="#contact">Contact</a>
+                            <a class="smooth-menu" href="#contact">联系公司</a>
                         </li>
                     </ul>
                 </div><!-- /.navbar-collapse -->

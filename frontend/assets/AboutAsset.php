@@ -22,7 +22,10 @@ class AboutAsset extends AssetBundle {
 	];
 	public $js = [
 		'//cdn.bootcss.com/waypoints/3.1.1/jquery.waypoints.min.js',
-		'scripts/about/about.js',
+		'scripts/about/about.js'
 	];
-	public $depends = ['frontend\assets\CommonAsset', 'jackh\aurora\assets\bundles\QuillAsset'];
+	public $depends = [
+		'frontend\assets\CommonAsset', 
+		'jackh\aurora\assets\bundles\QuillAsset'
+	];
 }

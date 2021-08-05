@@ -175,6 +175,7 @@ class SiteController extends Controller {
 	// 关于友山
 	public function actionAbout() {
 		Yii::$app->view->params['Sidebar'] = false;
+		Yii::$app->view->params['Banner'] = true;
 		return $this->render('about');
 	}
 

@@ -10,9 +10,9 @@ use \yii\helpers\Html;
             <div class="row align-center">
 
                 <div class="col-lg-6 info">
-                    <h2 class="wow fadeInRight" data-wow-defaul="300ms">We're building software<strong>to manage business</strong></h2>
+                    <h2 class="wow fadeInRight" data-wow-defaul="300ms">用科技<strong>改变环境</strong></h2>
                     <p class="wow fadeInLeft" data-wow-delay="500ms">
-                        Lasted hunted enough an up seeing in lively letter. Had judgment out opinions property the supplied.
+                        xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
                     </p>
                     <a class="btn btn-md btn-light effect wow fadeInUp" data-wow-delay="700ms" href="#">Get Started <i class="fas fa-angle-right"></i></a>
                 </div>

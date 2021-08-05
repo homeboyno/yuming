@@ -1,5 +1,6 @@
 <?php
 // 后端菜单一级
+use common\models\News;
 
 return [
 	'adminEmail' => 'admin@example.com',
@@ -9,13 +10,13 @@ return [
 		// ],
 	    ['label' => '页面编辑', 'url' => ['/edite/index'], 'icon' => 'image'],
 	    // ['label' => '基金产品', 'url' => ['/fund/index'], 'icon' => 'timeline'],
-	    // ['label' => '新闻', 'icon' => 'wallpaper', 'items' => [
-	    //     ['label' => '公司新闻', 'url' => ['/news/index', 'NewsSearch[type]' => News::NEWS_COMPANY_NEWS]],
+	    ['label' => '新闻', 'icon' => 'wallpaper', 'items' => [
+	        ['label' => '公司新闻', 'url' => ['/news/index', 'NewsSearch[type]' => News::NEWS_COMPANY_NEWS]]
 	    //     // ['label' => '友山观点', 'url' => ['/news/index', 'NewsSearch[type]' => News::NEWS_COMPANY_VIEWS]],
 		// 	['label' => '公司公告', 'url' => ['/news/index', 'NewsSearch[type]' => News::NEWS_COMPANY_NOTIFYS]],
 		// 	['label' => '策略报告', 'url' => ['/news/index', 'NewsSearch[type]' => News::NEWS_REPORT]],
 		// 	['label' => '友山视角', 'url' => ['/news/index', 'NewsSearch[type]' => News::NEWS_RESEARCH]],
-	    // ]],
+	    ]]
 		// ['label' => '投资者教育', 'url' => ['/education/index'], 'icon' => 'school'],
 		// ['label' => '基金经理', 'url' => ['/fund-manager/index'], 'icon' => 'assignment_ind'],
 		// ['label' => '领导介绍', 'url' => ['/executive/index'], 'icon' => 'event_seat'],
